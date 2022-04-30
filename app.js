@@ -42,3 +42,43 @@ function subMenu() {
     }
   })
 }
+
+function addEngineer() {
+  inquirer.prompt(engineerQuestions)
+  .then(answers => {
+    const newEngineer = new Engineer(
+      answers.engineerName,
+      answers.engineerId,
+      answers.engineerEmail,
+      answers.engineerGitHub
+    );
+    officeTeam.push(newEngineer);
+    subMenu()
+  })
+}
+
+function addIntern() {
+  inquirer.prompt(internQuestions)
+  .then(answers => {
+    const newIntern = new Intern(
+      answers.internName,
+      answers.internId,
+      answers.internEmail,
+      answers.internSchool
+    );
+    officeTeam.push(newIntern);
+    subMenu()
+  })
+}
+
+function buildTeam() {
+  if (!fs.existsSync('dist')) {
+    fs.mkdirSync('dist');
+  }
+
+  fs.writeFileSync(`${process.cwd()}/dist/index.html`, generatePage(officeTeam))
+ 
+  generateSite()
+}
+
+init()

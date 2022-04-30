@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ValiantThor92/team-profile-generator#readme",
   "dependencies": {
     "enquirer": "^2.3.6",
+    "inquirer": "^8.2.4",
     "jest": "^28.0.3"
   }
 }
