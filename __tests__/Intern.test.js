@@ -12,7 +12,7 @@ describe('Intern', () => {
   describe('Can set constructor properties', () => {
     it('Can set the school', () => {
       const school = 'University of Oregon';
-      const newIntern = new Intern('Travis', 1, 'magnafunk72@gmail.com')
+      const newIntern = new Intern('Travis', 1, 'currentlycrying@gmail.com')
       expect(newIntern.school).toBe(school);
     })
 
@@ -21,13 +21,13 @@ describe('Intern', () => {
   describe('Can use methods', () => {
     it('Can get school property using getschool()', () => {
       const school = 'University of Oregon';
-      const newIntern = new Intern('Travis', 1, 'magnafunk72@gmail.com')
+      const newIntern = new Intern('Travis', 1, 'currentlycrying@gmail.com')
       expect(newIntern.getSchool()).toBe(school);
     })
 
     it('Returns Intern when using getRole()', () => {
       const role = 'Intern'
-      const newIntern = new Intern('Travis', 1, 'magnafunk72@gmail.com')
+      const newIntern = new Intern('Travis', 1, 'currentlycrying@gmail.com')
       expect(newIntern.getRole()).toBe(role)
     })
   })

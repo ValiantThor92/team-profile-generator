@@ -11,6 +11,8 @@ const internQuestions = require('./utils/internQuestions');
 const generatePage = require('./utils/generateHTML');
 const generateSite = require('./utils/generate-site')
 
+const officeTeam = []
+
 function init() {
   console.log('application initiated')
   addManager()
