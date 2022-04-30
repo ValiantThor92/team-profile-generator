@@ -10,3 +10,35 @@ const Intern = require('./lib/Intern');
 const internQuestions = require('./utils/internQuestions');
 const generatePage = require('./utils/generateHTML');
 const generateSite = require('./utils/generate-site')
+
+function init() {
+  console.log('application initiated')
+  addManager()
+}
+
+function addManager() {
+  inquirer.prompt(managerQuestions)
+  .then(answers => {
+    const newManager = new Manager(
+      answers.managerName,
+      answers.managerId,
+      answers.managerEmail,
+      answers.managerOfficeNumber
+    );
+    officeTeam.push(newManager);
+    subMenu()
+  })
+}
+
+function subMenu() {
+  inquirer.prompt(subMenuQuestions)
+  .then( answer => {
+    if (answer.menuChoice === 'Engineer') {
+      addEngineer()
+    } else if (answer.menuChoice === 'Intern') {
+      addIntern()
+    } else {
+      buildTeam()
+    }
+  })
+}
