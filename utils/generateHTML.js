@@ -15,37 +15,43 @@ const generateHTML = teamMembers => {
 
 const generateManagerSection = teamMember => {
   return `
-  <section class='my-3 id='about'>
-    <h2 class="text-dark bg-primary p-2 display-inline-block">${teamMember.getRole()}</h2>
+  <div class="card">
+  <section class='card-header text-center my-3 id='about'>
+    <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
     <p>${teamMember.getName()}</p>
     <p>${teamMember.getId()}</p>
     <p>${teamMember.getEmail()}</p>
     <p>${teamMember.getOfficeNumber()}</p>
   </section>
+  </div>
   `
 }
 
 const generateEngineerSection = teamMember => {
   return `
-  <section class='my-3 id='about'>
-    <h2 class="text-dark bg-primary p-2 display-inline-block">${teamMember.getRole()}</h2>
+  <div class="card">
+  <section class='card-header text-center my-3 id='about'>
+    <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
     <p>${teamMember.getName()}</p>
     <p>${teamMember.getId()}</p>
     <p>${teamMember.getEmail()}</p>
     <p>${teamMember.getGithub()}</p>
   </section>
+  </div>
   `
 }
 
 const generateInternSection = teamMember => {
   return `
-  <section class='my-3 id='about'>
-    <h2 class="text-dark bg-primary p-2 display-inline-block">${teamMember.getRole()}</h2>
+  <div class="card">
+  <section class='card-header text-center my-3 id='about'>
+    <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
     <p>${teamMember.getName()}</p>
     <p>ID: ${teamMember.getId()}</p>
     <p>${teamMember.getEmail()}</p>
     <p>${teamMember.getSchool()}</p>
   </section>
+  </div>
   `
 }
 
@@ -58,10 +64,13 @@ const generatePage = team => {
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>My Team</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="style.css">
+      <title>My Team Profile Generator</title>
     </head>
-    <body>
-      <main>
+    <body class="container-fluid">
+      <main class="col-12 jumbotron mb-3 bg-danger">
         ${generateHTML(team)}
       </main>
     </body>
