@@ -1,34 +1,25 @@
-// const Test = require('jest');
-// const Intern = require('../lib/Intern');
+const Intern = require('../lib/Intern.js');
 
-// describe('Intern', () => {
-//   describe('Can generate an Intern object', () => {
-//     it('Can properly generate object', () => {
-//       const Travis = new Intern()
-//       expect(typeof(Travis)).toBe("object")
-//     })
-//   })
+test('set school', () => {
+    const school = 'school';
+    // placeholder for name, id, and email
+    const intern = new Intern('travis', 1, 'email@email.com', school);
 
-//   describe('Can set constructor properties', () => {
-//     it('Can set the school', () => {
-//       const school = 'University of Oregon';
-//       const newIntern = new Intern('Travis', 1, 'currentlycrying@gmail.com')
-//       expect(newIntern.school).toBe(school);
-//     })
+    expect(intern.school).toBe(school);
+});
 
-//   })
+// make sure getSchool() method returns intern school
+test("get intern's school", () => {
+    const school = 'school';
+    const intern = new Intern('travis', 1, 'email@email.com', school);
 
-//   describe('Can use methods', () => {
-//     it('Can get school property using getschool()', () => {
-//       const school = 'University of Oregon';
-//       const newIntern = new Intern('Travis', 1, 'currentlycrying@gmail.com')
-//       expect(newIntern.getSchool()).toBe(school);
-//     })
+    expect(intern.getSchool()).toBe(school);
+});
 
-//     it('Returns Intern when using getRole()', () => {
-//       const role = 'Intern'
-//       const newIntern = new Intern('Travis', 1, 'currentlycrying@gmail.com')
-//       expect(newIntern.getRole()).toBe(role)
-//     })
-//   })
-// });
+// make sure getRole() method returns intern role
+test("get intern's role", () => {
+    const role = 'Intern'
+    const intern = new Intern('travis', 1, 'email@email.com', 'school');
+
+    expect(intern.getRole()).toBe(role);
+});
