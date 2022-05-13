@@ -6,15 +6,12 @@ test('create employee object', () => {
 
   expect(typeof(employee)).toBe('object');
 });
-
-
 test('set name', () => {
   const name = 'nelson';
   const employee = new Employee(name);
 
   expect(employee.name).toBe(name);
 });
-
 test('set id', () => {
   const id = 1;
   // foo is a placeholder value
@@ -22,14 +19,12 @@ test('set id', () => {
 
   expect(employee.id).toBe(id);
 });
-
 test('set email', () => {
   const email = 'email@email.com';
   // 1 is a placeholder value for id
   const employee = new Employee('travis', 1, email);
   expect(employee.email).toBe(email);
 });
-
 // make sure getName() method returns employee name
 test("get employee's name", () => {
   const name = 'nelson';
@@ -37,7 +32,6 @@ test("get employee's name", () => {
 
   expect(employee.getName()).toBe(name);
 });
-
 // make sure getId() method returns employee id
 test("get employee's id", () => {
   const id = 1;
@@ -45,7 +39,6 @@ test("get employee's id", () => {
 
   expect(employee.getId()).toBe(id);
 });
-
 // make sure getEmail() method returns employee email
 test("get employee's email", () => {
   const email = 'email@email.com';
@@ -53,7 +46,6 @@ test("get employee's email", () => {
 
   expect(employee.getEmail()).toBe(email);
 });
-
 // make sure getRole() method returns employee role
 test("get employee's role", () => {
   const role = 'Employee';

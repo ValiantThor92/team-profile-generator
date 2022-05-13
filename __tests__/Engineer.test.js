@@ -1,34 +1,25 @@
-// const Test = require('jest');
-// const Engineer = require('../lib/Engineer');
+const Engineer = require('../lib/Engineer.js');
 
-// describe('Engineer', () => {
-//   describe('Can generate an Engineer object', () => {
-//     it('Can properly generate object', () => {
-//       const Travis = new Engineer()
-//       expect(typeof(Travis)).toBe("object")
-//     })
-//   })
+test('set github username', () => {
+    const github = 'githubname';
+    // placeholder values for name, id, and email
+    const engineer = new Engineer('travis', 1, 'email@email.com', github);
 
-//   describe('Can set constructor properties', () => {
-//     it('Can set the GitHub', () => {
-//       const gitname = 'ValiantThor92';
-//       const newEngineer = new Engineer('Travis', 1, 'magnafunk72@gmail.com')
-//       expect(newEngineer.github).toBe(gitName);
-//     })
+    expect(engineer.github).toBe(github);
+});
 
-//   })
+// make sure getGithub() method returns engineer github
+test("get engineer's github username", () => {
+    const github = 'githubname'
+    const engineer = new Engineer('travis', 1, 'email@email.com', github);
 
-//   describe('Can use methods', () => {
-//     it('Can get gitHub property using getGitHub()', () => {
-//       const name = 'ValiantThor92';
-//       const newEngineer = new Engineer('Travis', 1, 'magnafunk72@gmail.com')
-//       expect(newEngineer.getGitHub()).toBe(gitName);
-//     })
+    expect(engineer.getGithub()).toBe(github);
+});
 
-//     it('Returns Engineer when using getRole()', () => {
-//       const role = 'Engineer'
-//       const newEngineer = new Engineer('Travis', 1, 'magnafunk72@gmail.com')
-//       expect(newEngineer.getRole()).toBe(role)
-//     })
-//   })
-// });
+// make sure getRole() method returns engineer role
+test("get engineer's role", () => {
+    const role = 'Engineer';
+    const engineer = new Engineer('travis', 1, 'email@email.com', 'githubname');
+
+    expect(engineer.getRole()).toBe(role);
+});
