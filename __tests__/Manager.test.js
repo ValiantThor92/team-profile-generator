@@ -11,17 +11,17 @@ describe('Manager', () => {
 
   describe('Can set constructor properties', () => {
     it('Can set the school', () => {
-      const officeNumber = 42069;
+      const phone = 42069;
       const newManager = new Manager('Trevor', 1, 'morningwood@gmail.com')
-      expect(newManager.officeNumber).toBe(officeNumber);
+      expect(newManager.phone).toBe(phone);
     })
   })
 
   describe('Can use methods', () => {
     it('Can get school property using getschool()', () => {
-      const officeNumber = 42069;
+      const phon = 42069;
       const newManager = new Manager('Trevor', 1, 'morningwood@gmail.com')
-      expect(newManager.getofficeNumber()).toBe(officeNumber);
+      expect(newManager.getphone()).toBe(phone);
     })
 
     it('Returns Manager when using getRole()', () => {

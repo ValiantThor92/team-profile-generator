@@ -16,13 +16,13 @@ const generateHTML = teamMembers => {
 const generateManagerSection = teamMember => {
   return `
   <div class="card">
-  <section class='card-header text-center my-3 id='about'>
-    <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
-    <p>${teamMember.getName()}</p>
-    <p>${teamMember.getId()}</p>
-    <p>${teamMember.getEmail()}</p>
-    <p>${teamMember.getOfficeNumber()}</p>
-  </section>
+    <section class='card-header text-center my-3 id='about'>
+      <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
+      <p>${teamMember.getName()}</p>
+      <p>${teamMember.getId()}</p>
+      <a href="mailto:${teamMember.getEmail()}">${teamMember.getEmail()}</a>
+      <p>${teamMember.getPhone()}</p>
+    </section>
   </div>
   `
 }
@@ -30,13 +30,13 @@ const generateManagerSection = teamMember => {
 const generateEngineerSection = teamMember => {
   return `
   <div class="card">
-  <section class='card-header text-center my-3 id='about'>
-    <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
-    <p>${teamMember.getName()}</p>
-    <p>${teamMember.getId()}</p>
-    <p>${teamMember.getEmail()}</p>
-    <p>${teamMember.getGithub()}</p>
-  </section>
+    <section class='card-header text-center my-3 id='about'>
+      <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
+      <p>${teamMember.getName()}</p>
+      <p>${teamMember.getId()}</p>
+      <a href="mailto:${teamMember.getEmail()}">${teamMember.getEmail()}</a>
+      <a href="https://github.com/${teamMember.getGithub()}" target="_blank">${teamMember.getGithub()}</a>
+    </section>
   </div>
   `
 }
@@ -44,13 +44,13 @@ const generateEngineerSection = teamMember => {
 const generateInternSection = teamMember => {
   return `
   <div class="card">
-  <section class='card-header text-center my-3 id='about'>
-    <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
-    <p>${teamMember.getName()}</p>
-    <p>ID: ${teamMember.getId()}</p>
-    <p>${teamMember.getEmail()}</p>
-    <p>${teamMember.getSchool()}</p>
-  </section>
+    <section class='card-header text-center my-3 id='about'>
+      <h2 class="text-dark bg-success p-2 display-inline-block">${teamMember.getRole()}</h2>
+      <p>${teamMember.getName()}</p>
+      <p>ID: ${teamMember.getId()}</p>
+      <a href="mailto:${teamMember.getEmail()}">${teamMember.getEmail()}</a>
+      <p>${teamMember.getSchool()}</p>
+    </section>
   </div>
   `
 }

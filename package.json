@@ -2,12 +2,13 @@
   "name": "team-profile-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "npm start"
   },
   "repository": {
     "type": "git",
