@@ -1,33 +1,24 @@
-// const Test = require('jest');
-// const Manager = require('../lib/Manager');
+const Manager = require('../lib/Manager.js');
 
-// describe('Manager', () => {
-//   describe('Can generate an Manager object', () => {
-//     it('Can properly generate object', () => {
-//       const Trevor = new Manager()
-//       expect(typeof(Trevor)).toBe("object")
-//     })
-//   })
+test('set office number', () => {
+    const phone = 100;
+    const manager = new Manager('travis', 1, 'email@email.com', phone);
 
-//   describe('Can set constructor properties', () => {
-//     it('Can set the school', () => {
-//       const phone = 42069;
-//       const newManager = new Manager('Trevor', 1, 'morningwood@gmail.com')
-//       expect(newManager.phone).toBe(phone);
-//     })
-//   })
+    expect(manager.phone).toBe(phone);
+});
 
-//   describe('Can use methods', () => {
-//     it('Can get school property using getschool()', () => {
-//       const phon = 42069;
-//       const newManager = new Manager('Trevor', 1, 'morningwood@gmail.com')
-//       expect(newManager.getphone()).toBe(phone);
-//     })
+// make sure getOfficeNumber() method returns manager office number
+test("get manager's office number", () => {
+    const phone = 100;
+    const manager = new Manager('travis', 1, 'email@email.com', phone);
 
-//     it('Returns Manager when using getRole()', () => {
-//       const role = 'Manager'
-//       const newManager = new Manager('Trevor', 1, 'morningwood@gmail.com')
-//       expect(newManager.getRole()).toBe(role)
-//     })
-//   })
-// });
+    expect(manager.getPhone()).toBe(phone);
+});
+
+// make sure getRole() method returns manager role
+test("get manager's role", () => {
+    const role = 'Manager';
+    const manager = new Manager('travis', 1, 'email@email.com', 100);
+
+    expect(manager.getRole()).toBe(role);
+});
