@@ -1,58 +1,63 @@
-const test = require('jest');
-const { describe } = require('yargs');
 const Employee = require('../lib/Employee');
 
-describe('Employee', () => {
-  describe('create employee object', () => {
-    it('Can properly generate object', () => {
-      const employee = new Employee()
-      expect(typeof(employee)).toBe("object")
-    })
-  })
+// makes sure employee is an object
+test('create employee object', () => {
+  const employee = new Employee();
 
-  describe('Can set constructor properties', () => {
-    it('Can set the name', () => {
-      const name = 'Travis';
-      const employee = new Employee(name)
-      expect(employee.name).toBe(name);
-    })
+  expect(typeof(employee)).toBe('object');
+});
 
-    it('Can set the ID', () => {
-      const testID = 1;
-      const employee = new Employee('Travis', testID)
-      expect(employee.id).toBe(testID)
-    })
 
-    it('Can set the Email', () => {
-      const email = 'magnafunk72@gmail.com';
-      const employee = new Employee('Travis', 1, email)
-      expect(employee.email).toBe(email)
-    })
-  })
+test('set name', () => {
+  const name = 'nelson';
+  const employee = new Employee(name);
 
-  describe('Can use methods', () => {
-    it('Can get name property using getName()', () => {
-      const name = 'Travis';
-      const employee = new Employee(name);
-      expect(employee.getName()).toBe(name);
-    })
+  expect(employee.name).toBe(name);
+});
 
-    it('Can get ID property using getId()', () => {
-      const testID = 1;
-      const employee = new Employee('Travis', testID)
-      expect(employee.getId()).toBe(testID)
-    })
+test('set id', () => {
+  const id = 1;
+  // foo is a placeholder value
+  const employee = new Employee('travis', id);
 
-    it('Can get Email property using getEmail()', () => {
-      const email = 'email@gmail.com';
-      const employee = new Employee('Travis', 1, email)
-      expect(employee.getEmail()).toBe(email)
-    })
-    
-    it('Returns Employee when using getRole()', () => {
-      const role = 'Employee'
-      const employee = new Employee('Travis', 1, 'magnafunk72@gmail.com')
-      expect(employee.getRole()).toBe(role)
-    })
-  })
+  expect(employee.id).toBe(id);
+});
+
+test('set email', () => {
+  const email = 'email@email.com';
+  // 1 is a placeholder value for id
+  const employee = new Employee('travis', 1, email);
+  expect(employee.email).toBe(email);
+});
+
+// make sure getName() method returns employee name
+test("get employee's name", () => {
+  const name = 'nelson';
+  const employee = new Employee(name);
+
+  expect(employee.getName()).toBe(name);
+});
+
+// make sure getId() method returns employee id
+test("get employee's id", () => {
+  const id = 1;
+  const employee = new Employee('travis', id);
+
+  expect(employee.getId()).toBe(id);
+});
+
+// make sure getEmail() method returns employee email
+test("get employee's email", () => {
+  const email = 'email@email.com';
+  const employee = new Employee('travis', 1, email);
+
+  expect(employee.getEmail()).toBe(email);
+});
+
+// make sure getRole() method returns employee role
+test("get employee's role", () => {
+  const role = 'Employee';
+  const employee = new Employee('travis', 1, 'email@email.com');
+
+  expect(employee.getRole()).toBe(role);
 });
